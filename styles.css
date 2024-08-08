@@ -1,0 +1,330 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    font-family: "DM Sans";
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+.background-animtion {
+    width: 100%;
+    height: 100%;
+    outline: none;
+	display: block;
+}
+
+.hide {
+    position: absolute;
+    width: 160px;
+    height: 160px;
+    right: 10px;
+    bottom: -65px;
+    border-radius: 50%;
+    background: linear-gradient(-45deg, #9e75ff, #ffe8eb, #ffa3fa, #ffea73);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+}
+
+.hide:hover {
+    -webkit-animation-play-state: paused;
+    -moz-animation-play-state: paused;
+    -o-animation-play-state: paused;
+    animation-play-state: paused;
+    cursor: pointer;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+        transform: rotate(0deg);
+    }
+
+    50% {
+        background-position: 100% 50%;
+        transform: rotate(90deg);
+    }
+
+    100% {
+        background-position: 0% 50%;
+        transform: rotate(360deg);
+    }
+}
+
+
+@keyframes gradient-text {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+#my-location {
+    position: absolute;
+    bottom: 0;
+    left: 10px;
+    color: black;
+    font-size: 20px;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+#my-location:hover {
+    cursor: pointer;
+    background: linear-gradient(-45deg, #9e75ff, #ffe8eb, #ffa3fa, #ffea73);
+    background-size: 400% 400%;
+    animation: gradient-text 15s ease infinite;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+.scroll-below-arrow {
+    position: absolute;
+    bottom: -30px;
+    right: 40px;
+    width: 100px;
+    height: 100px;
+}
+
+#loading-screer {
+    display: flex;
+    position: fixed;
+    width: 100vw;
+    background-color: #000;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    color: white;
+    text-align: center;
+    animation: loading-screen-anim 4s;
+}
+
+@keyframes loading-screen-anim {
+    0% {
+        height: 100vh;
+    }
+
+    100% {
+        height: 0;
+    }
+}
+
+.home-page {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    overflow: hidden;
+}
+
+nav {
+    margin-top: 10px;
+    width: 1000px;
+    border-radius: 1%;
+    font-family: "DM Sans";
+    font-weight: 700;
+    display: flex;
+    z-index: 999;
+    justify-content: space-between;
+    position: fixed;
+    /* backdrop-filter: blur(10px) saturate(200%);
+    -webkit-backdrop-filter: blur(10px) saturate(200%);
+    background-color: rgba(17, 25, 40, 0.75);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.125); */
+
+}
+
+#logo {
+    height: 15px;
+    width: 15px;
+    transition: transform 0.5s ease;
+    animation-name: leSpinOutLeft;
+}
+
+.logo-div {
+    width: 130px;
+    height: 35px;
+    margin: 20px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    transform: translateX(0px);
+    transition: transform 0.5s ease;
+}
+
+.code-by,
+.amey,
+.sawant {
+    color: black;
+    font-size: 15px;
+    transition: all 0.5s ease;
+    position: absolute;
+    white-space: nowrap;
+    animation-name: leSpinOutLeft;
+}
+
+.code-by {
+    left: 20px;
+    z-index: 1;
+}
+
+.amey {
+    left: 20px;
+    opacity: 1;
+    transform: translateX(60px);
+    z-index: 2;
+}
+
+.sawant {
+    left: 160px;
+    opacity: 0;
+    transform: translateX(0px);
+    z-index: 2;
+}
+
+.logo-div:hover .code-by {
+    opacity: 0;
+    transform: translateX(-10px);
+}
+
+.logo-div:hover .amey {
+    opacity: 1;
+    transform: translateX(5px);
+}
+
+.logo-div:hover .sawant {
+    opacity: 1;
+    transform: translateX(-90px);
+}
+
+.logo-div:hover #logo {
+    transform: rotate(360deg);
+}
+
+.logo-div:hover {
+    transform: translate(6px, 20%);
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+    margin: 20px;
+    padding: 10px;
+    align-items: center;
+    position: absolute;
+    right: 10px;
+    white-space: nowrap;
+}
+
+.nav-links,
+li,
+a {
+    color: black;
+}
+
+.nav-links li:hover {
+    transform: translate(6px, 20%);
+    cursor: pointer;
+}
+
+.nav-link {
+    position: relative;
+    text-decoration: none;
+    color: black;
+    padding: 10px;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0px;
+    background-color: black;
+    border-radius: 50%;
+    transition: width height 0.3s ease-in-out;
+}
+
+.nav-link:hover::after {
+    width: 5px;
+    height: 5px;
+}
+
+.circle {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    /* background-color: red; */
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.text {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    animation: anim 10s linear infinite;
+    color: black;
+}
+
+@keyframes anim {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.text span {
+    position: absolute;
+    left: 50%;
+    font-size: 1.2em;
+    transform-origin: 0 100px;
+}
+
+.stripe-1 {
+    position: absolute;
+    width: 100vw;
+    height: 55px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    z-index: 99;
+    transform: rotate(4deg);
+    background-color: aqua;
+}
+
+.stripe-2 {
+    position: absolute;
+    width: 100vw;
+    height: 55px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    z-index: 99;
+    transform: rotate(-6deg);
+    background-color: aqua;
+}
