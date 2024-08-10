@@ -4,20 +4,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- ? title -->
     <title>Portfolio | Amey Sawant</title>
+    <!-- ? favicon -->
     <link rel="icon" href="assets/logo-img/LOGO.svg">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="bg-styles.css">
+    <!-- ? my css -->
+    <link rel="stylesheet" href="./css/styles.css">
+    <!-- ? my js -->
+    <script defer src="./js/script.js"></script>
+    <!-- ? Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
-        rel="stylesheet"/>
+        rel="stylesheet" />
+    <!-- ? Aos Animations -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+    AOS.init();
+    </script>
+    <!-- ? tailwind css -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
 </head>
 
 <body>
     <main>
+        <!-- ? Home Page -->
         <div class="home-page">
+            <!-- ? Navbar -->
             <nav>
                 <div class="logo-div">
                     <a href="./index.html"><img id="logo" src="assets/logo-img/LOGO.svg" alt="logo"><span
@@ -32,39 +49,24 @@
                     </ul>
                 </div>
             </nav>
-            <iframe class="background-animtion" src="./background/background.html" frameborder="0" width='100%' height='100%'></iframe>
-            <h4 id="my-location" >Mumbai,&nbsp;&nbsp;<span id="element"></span></h4>
-            <hr class="line-after-my-location" >
         </div>
-        <div class="stripe1-div">
-            <div class="st1ripe-1">
-            </div>
-            <div class="s1tripe-2">
-            </div>
-        </div>
+        <!-- ? About Page -->
         <div class="about-page" style="width: 100%; height: 100vh;">
             <h1 style="color: black;">About</h1>
         </div>
+        <!-- ? Work Page -->
         <div class="work-page" style="width: 100%; height: 100vh;">
             <h1 style="color: black;">WORK</h1>
         </div>
+        <!-- ? Contact Page -->
         <div class="contact-page" style="width: 100%; height: 100vh;">
             <h1 style="color: black;">Contact</h1>
         </div>
+        <!-- Footer -->
         <footer>
             <p style="color: black;">© 2024 Amey Sawant</p>
         </footer>
     </main>
-
-    <script>
-        var typed = new Typed('#element', {
-            strings: ['<i>india</i>'],
-            loop: true,
-            loopCount: Infinity,
-            typeSpeed: 150,
-            backSpeed: 150
-        });
-    </script>
 </body>
 
 </html>

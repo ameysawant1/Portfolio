@@ -9,8 +9,8 @@
     box-sizing: border-box;
 }
 
-body::-webkit-scrollbar {
-    display: none;
+html,body{
+    scrollbar-width: none;
 }
 
 .background-animtion {
@@ -30,6 +30,7 @@ body::-webkit-scrollbar {
     background: linear-gradient(-45deg, #9e75ff, #ffe8eb, #ffa3fa, #ffea73);
     background-size: 400% 400%;
     animation: gradient 15s ease infinite;
+    -webkit-animation: gradient 15s ease infinite;
 }
 
 .hide:hover {
@@ -44,8 +45,11 @@ body::-webkit-scrollbar {
     0% {
         background-position: 0% 50%;
         transform: rotate(0deg);
-    }
-
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+}
     50% {
         background-position: 100% 50%;
         transform: rotate(90deg);
@@ -132,8 +136,6 @@ body::-webkit-scrollbar {
 }
 
 nav {
-    margin-top: 10px;
-    width: 1000px;
     border-radius: 1%;
     font-family: "DM Sans";
     font-weight: 700;
@@ -141,12 +143,10 @@ nav {
     z-index: 999;
     justify-content: space-between;
     position: fixed;
-    /* backdrop-filter: blur(10px) saturate(200%);
-    -webkit-backdrop-filter: blur(10px) saturate(200%);
-    background-color: rgba(17, 25, 40, 0.75);
-    border-radius: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.125); */
-
+    -webkit-border-radius: 1%;
+    -moz-border-radius: 1%;
+    -ms-border-radius: 1%;
+    -o-border-radius: 1%;
 }
 
 #logo {
