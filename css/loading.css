@@ -1,0 +1,223 @@
+body {
+    overflow: hidden;
+}
+
+.loading-container {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+}
+
+.loading-screen {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.loading-words {
+    text-align: center;
+    font-size: 2rem;
+    opacity: 0;
+    transition: opacity 0.8s ease-out;
+}
+
+.loading-words .home-active {
+    display: none;
+}
+
+.loading-words .home-active-first,
+.loading-words .home-active-last {
+    display: block;
+    opacity: 0;
+    transition: opacity 0.8s ease-out;
+}
+
+.rounded-div-wrap {
+    position: absolute;
+    width: 100%;
+}
+
+.rounded-div-wrap.top {
+    top: 0;
+}
+
+.rounded-div-wrap.bottom {
+    bottom: 0;
+}
+
+.rounded-div {
+    width: 100%;
+    height: 10vh;
+    background-color: #000;
+}
+
+.no-scroll {
+    overflow: hidden;
+}
+
+
+.home-page {
+    opacity: 0;
+    transform: translateY(50vh);
+    transition: opacity 1.5s ease-out, transform 1.5s ease-out;
+}
+
+/* loading.css */
+.no-scroll-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    z-index: 900;
+    display: none;
+}
+
+.loading-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    z-index: 800;
+    pointer-events: none;
+    background: transparent;
+}
+
+.loading-screen {
+    position: relative;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    will-change: top;
+}
+
+.loading-screen,
+.loading-container .rounded-div-wrap.top .rounded-div,
+.loading-container .rounded-div-wrap.bottom .rounded-div {
+    background-color: #000;
+}
+
+.loading-container .rounded-div-wrap.top .rounded-div,
+.loading-container .rounded-div-wrap.bottom .rounded-div {
+    height: 745%;
+}
+
+.loading-container .rounded-div-wrap.top {
+    top: 0;
+    position: absolute;
+    transform: translateY(-99%) scale(1, -1);
+    z-index: 2;
+    height: 0vh;
+    will-change: height;
+}
+
+.loading-container .rounded-div-wrap.bottom {
+    top: unset;
+    bottom: 0;
+    position: absolute;
+    transform: translateY(99%);
+    z-index: 2;
+    height: 0vh;
+    will-change: height;
+}
+
+.loading-container .loading-words {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    pointer-events: none;
+    display: block;
+    will-change: opacity;
+}
+
+.loading-container .loading-words h2 {
+    margin: 0;
+    padding: 0;
+    color: white;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    display: none;
+    padding-left: .6em;
+    white-space: nowrap;
+    padding-right: .4em;
+    will-change: opacity;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+}
+
+.loading-container .loading-words h2.jap {
+    font-size: calc(clamp(3.25em, 5vw, 4.5em) * .65);
+    transform: translate(-50%, 10%);
+    -webkit-transform: translate(-50%, 10%);
+    -moz-transform: translate(-50%, 10%);
+    -ms-transform: translate(-50%, 10%);
+    -o-transform: translate(-50%, 10%);
+}
+
+.loading-container .dot {
+    display: block;
+    position: absolute;
+    border-radius: 50%;
+    background-color: white;
+    left: 0;
+    top: 47%;
+    bottom: auto;
+    width: calc(clamp(16px, 1.2vw, 19px) / 1.65);
+    height: calc(clamp(16px, 1.2vw, 19px) / 1.65);
+    transform: translate(0, 0) scale(1);
+}
+
+.loading-container .loading-words h2.active {
+    display: block;
+}
+
+.loading-container .loading-words .home-active,
+.loading-container .loading-words .home-active-last {
+    opacity: 0;
+    display: none;
+}
+
+.loading-fade {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    z-index: 90;
+    background: #FFF;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.once-in {
+    will-change: transform;
+}
+
+@media screen and (max-width: 540px) {
+    .loading-container .dot {
+        top: 42%;
+    }
+}

@@ -6,19 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <!-- ? title -->
-    <title>Portfolio | Amey Sawant</title>
+    <title>Portfolio • Amey Sawant</title>
     <!-- ? favicon -->
     <link rel="icon" href="assets/logo-img/LOGO.svg">
+
     <!-- ? my css -->
     <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/loading.css">
+
     <!-- ? my js -->
     <script defer src="./js/script.js"></script>
     <!-- ? Google Fonts -->
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
-        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet" />
+
     <!-- ? Aos Animations -->
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
@@ -26,20 +29,61 @@
     AOS.init();
     </script>
     <!-- ? tailwind css -->
+    
     <script src="https://cdn.tailwindcss.com"></script>
 
 </head>
 
 <body>
+    <div class="no-scroll-overlay"></div>
+    <div class="loading-container">
+        <div class="loading-screen">
+            <div class="rounded-div-wrap top">
+                <div class="rounded-div"></div>
+            </div>
+            <div class="loading-words">
+                <h2 class="home-active home-active-first">Hello<div class="dot"></div></h2>
+                <h2 class="home-active">Bonjour<div class="dot"></div></h2>
+                <h2 class="home-active">स्वागत हे<div class="dot"></div></h2>
+                <h2 class="home-active">Ciao<div class="dot"></div></h2>
+                <h2 class="home-active">Olá<div class="dot"></div></h2>
+                <h2 class="home-active jap">おい<div class="dot"></div></h2>
+                <h2 class="home-active">Hallå<div class="dot"></div></h2>
+                <h2 class="home-active">Guten tag<div class="dot"></div></h2>
+                <h2 class="home-active-last">Hallo<div class="dot"></div></h2>
+                <h2 class="active">Home<div class="dot"></div></h2>
+                <h2>Work<div class="dot"></div></h2>
+                <h2>TWICE<div class="dot"></div></h2>
+                <h2>The Damai<div class="dot"></div></h2>
+                <h2>FABRIC&trade;<div class="dot"></div></h2>
+                <h2>Aanstekelijk<div class="dot"></div></h2>
+                <h2>Base Create<div class="dot"></div></h2>
+                <h2>AVVR<div class="dot"></div></h2>
+                <h2>GraphicHunters<div class="dot"></div></h2>
+                <h2>Future Goals<div class="dot"></div></h2>
+                <h2>Atypikal<div class="dot"></div></h2>
+                <h2>One:Nil<div class="dot"></div></h2>
+                <h2>Andy Hardy<div class="dot"></div></h2>
+                <h2>About<div class="dot"></div></h2>
+                <h2>Contact<div class="dot"></div></h2>
+                <h2>Success<div class="dot"></div></h2>
+                <h2>Archive<div class="dot"></div></h2>
+                <h2>Error<div class="dot"></div></h2>
+                <h2>Styleguide<div class="dot"></div></h2>
+            </div>
+            <div class="rounded-div-wrap bottom">
+                <div class="rounded-div"></div>
+            </div>
+        </div>
+    </div>
     <main>
         <!-- ? Home Page -->
         <div class="home-page">
             <!-- ? Navbar -->
-            <nav>
+            <nav class="customContainer">
                 <div class="logo-div">
-                    <a href="./index.html"><img id="logo" src="assets/logo-img/LOGO.svg" alt="logo"><span
-                            class="code-by">Code by</span><span class="amey">Amey</span><span
-                            class="sawant">Sawant</span></a>
+                    <a href="./index.html"><img id="logo" src="assets/logo-img/LOGO.svg" alt="logo"></a>
+                    <span class="code-by">Code by</span><span class="amey">Amey</span><span class="sawant">Sawant</span>
                 </div>
                 <div>
                     <ul class="nav-links">
@@ -50,22 +94,6 @@
                 </div>
             </nav>
         </div>
-        <!-- ? About Page -->
-        <div class="about-page" style="width: 100%; height: 100vh;">
-            <h1 style="color: black;">About</h1>
-        </div>
-        <!-- ? Work Page -->
-        <div class="work-page" style="width: 100%; height: 100vh;">
-            <h1 style="color: black;">WORK</h1>
-        </div>
-        <!-- ? Contact Page -->
-        <div class="contact-page" style="width: 100%; height: 100vh;">
-            <h1 style="color: black;">Contact</h1>
-        </div>
-        <!-- Footer -->
-        <footer>
-            <p style="color: black;">© 2024 Amey Sawant</p>
-        </footer>
     </main>
 </body>
 
