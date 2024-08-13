@@ -1,6 +1,4 @@
-body {
-    overflow: hidden;
-}
+@import url(./styles.css);
 
 .loading-container {
     position: fixed;
@@ -110,7 +108,7 @@ body {
 .loading-screen,
 .loading-container .rounded-div-wrap.top .rounded-div,
 .loading-container .rounded-div-wrap.bottom .rounded-div {
-    background-color: #000;
+    background-color: #000000;
 }
 
 .loading-container .rounded-div-wrap.top .rounded-div,
