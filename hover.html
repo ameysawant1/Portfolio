@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouse Follower</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f0f0;
+        }
+
+        .follower {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background-color: #3498db;
+            border-radius: 50%;
+            pointer-events: none; /* This ensures the mouse events pass through the follower */
+            transition: transform 0.1s ease;
+        }
+    </style>
+</head>
+<body>
+    <div class="follower"></div>
+    <script>
+        const follower = document.querySelector('.follower');
+        const followerHalfSize = 1;
+
+        document.addEventListener('mousemove', (event) => {
+            const { clientX, clientY } = event;
+            follower.style.transform = `translate(${clientX - followerHalfSize}px, ${clientY - followerHalfSize}px)`;
+        });
+    </script>
+</body>
+</html>

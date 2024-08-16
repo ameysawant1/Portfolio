@@ -1,42 +1,48 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <!-- ? title -->
     <title>Portfolio • Amey Sawant</title>
-    <!-- ? favicon -->
     <link rel="icon" href="assets/logo-img/LOGO.svg">
 
-    <!-- ? my css -->
+    <!-- External CSS -->
     <link rel="stylesheet" href="./css/styles.css">
     <link rel="stylesheet" href="./css/loading.css">
 
-    <!-- ? my js -->
-    <script defer src="./js/script.js"></script>
-    <!-- ? Google Fonts -->
-
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
-        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap" rel="stylesheet">
 
-    <!-- ? Aos Animations -->
+    <!-- Aos Animations -->
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script>
-        AOS.init();
-    </script>
-    <!-- ? tailwind css -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js" defer></script>
 
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
 
+    <!-- GSAP Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.2/gsap.min.js" defer></script>
+
+    <!-- Custom JS -->
+    <script src="./js/script.js" defer></script>
+
+    <!-- Include grained.js -->
+    <script src="https://cdn.jsdelivr.net/npm/grained@latest/grained.min.js"></script>
+
+    <style>
+        :root {
+            --fontTASA: "./assets/fonts/TASAExplorerVF.woff2";
+            --fontNataSans: "./assets/fonts/NataSansVF.woff";
+            --fontNataSans2: "./assets/fonts/NataSansVF.woff2";
+        }
+    </style>
 </head>
 
-<body>
+<body id="grained">
     <div class="no-scroll-overlay"></div>
     <div class="loading-container">
         <div class="loading-screen">
@@ -44,62 +50,34 @@
                 <div class="rounded-div"></div>
             </div>
             <div class="loading-words">
-                <h2 class="home-active home-active-first">Hello<div class="dot"></div>
-                </h2>
-                <h2 class="home-active">Bonjour<div class="dot"></div>
-                </h2>
-                <h2 class="home-active">स्वागत हे<div class="dot"></div>
-                </h2>
-                <h2 class="home-active">Ciao<div class="dot"></div>
-                </h2>
-                <h2 class="home-active">Olá<div class="dot"></div>
-                </h2>
-                <h2 class="home-active jap">おい<div class="dot"></div>
-                </h2>
-                <h2 class="home-active">Hallå<div class="dot"></div>
-                </h2>
-                <h2 class="home-active">Guten tag<div class="dot"></div>
-                </h2>
-                <h2 class="home-active-last">Hallo<div class="dot"></div>
-                </h2>
-                <h2 class="active">Home<div class="dot"></div>
-                </h2>
-                <h2>Work<div class="dot"></div>
-                </h2>
-                <h2>TWICE<div class="dot"></div>
-                </h2>
-                <h2>The Damai<div class="dot"></div>
-                </h2>
-                <h2>FABRIC&trade;<div class="dot"></div>
-                </h2>
-                <h2>Aanstekelijk<div class="dot"></div>
-                </h2>
-                <h2>Base Create<div class="dot"></div>
-                </h2>
-                <h2>AVVR<div class="dot"></div>
-                </h2>
-                <h2>GraphicHunters<div class="dot"></div>
-                </h2>
-                <h2>Future Goals<div class="dot"></div>
-                </h2>
-                <h2>Atypikal<div class="dot"></div>
-                </h2>
-                <h2>One:Nil<div class="dot"></div>
-                </h2>
-                <h2>Andy Hardy<div class="dot"></div>
-                </h2>
-                <h2>About<div class="dot"></div>
-                </h2>
-                <h2>Contact<div class="dot"></div>
-                </h2>
-                <h2>Success<div class="dot"></div>
-                </h2>
-                <h2>Archive<div class="dot"></div>
-                </h2>
-                <h2>Error<div class="dot"></div>
-                </h2>
-                <h2>Styleguide<div class="dot"></div>
-                </h2>
+                <h2 class="home-active home-active-first">Hello<div class="dot"></div></h2>
+                <h2 class="home-active">Bonjour<div class="dot"></div></h2>
+                <h2 class="home-active">स्वागत हे<div class="dot"></div></h2>
+                <h2 class="home-active">Ciao<div class="dot"></div></h2>
+                <h2 class="home-active">Olá<div class="dot"></div></h2>
+                <h2 class="home-active jap">おい<div class="dot"></div></h2>
+                <h2 class="home-active">Hallå<div class="dot"></div></h2>
+                <h2 class="home-active">Guten tag<div class="dot"></div></h2>
+                <h2 class="home-active-last">Hallo<div class="dot"></div></h2>
+                <h2 class="active">Home<div class="dot"></div></h2>
+                <h2>Work<div class="dot"></div></h2>
+                <h2>TWICE<div class="dot"></div></h2>
+                <h2>The Damai<div class="dot"></div></h2>
+                <h2>FABRIC&trade;<div class="dot"></div></h2>
+                <h2>Aanstekelijk<div class="dot"></div></h2>
+                <h2>Base Create<div class="dot"></div></h2>
+                <h2>AVVR<div class="dot"></div></h2>
+                <h2>GraphicHunters<div class="dot"></div></h2>
+                <h2>Future Goals<div class="dot"></div></h2>
+                <h2>Atypikal<div class="dot"></div></h2>
+                <h2>One:Nil<div class="dot"></div></h2>
+                <h2>Andy Hardy<div class="dot"></div></h2>
+                <h2>About<div class="dot"></div></h2>
+                <h2>Contact<div class="dot"></div></h2>
+                <h2>Success<div class="dot"></div></h2>
+                <h2>Archive<div class="dot"></div></h2>
+                <h2>Error<div class="dot"></div></h2>
+                <h2>Styleguide<div class="dot"></div></h2>
             </div>
             <div class="rounded-div-wrap bottom">
                 <div class="rounded-div"></div>
@@ -107,40 +85,46 @@
         </div>
     </div>
     <main>
-        <!-- ? Home Page -->
+        <!-- Home Page -->
         <section class="Home-Page">
-            <!-- ? Navbar -->
-            <nav class="customContainer">
-                <div class="logo-div">
+            <!-- Navbar -->
+            <nav class="nav-container">
+                <div class="logo-div magnetic">
                     <a href="./index.html"><img id="logo" src="assets/logo-img/LOGO.svg" alt="logo"></a>
                     <span class="code-by">Code by</span><span class="amey">Amey</span><span class="sawant">Sawant</span>
                 </div>
-                <div>
+                <div class="nav-menu">
                     <h3 class="menu-icon">
                         <div class="dot-menu"></div> Menu
                     </h3>
                     <ul class="nav-links">
-                        <li><a class="nav-link" href="#home">Work</a></li>
-                        <li><a class="nav-link" href="#about">About</a></li>
-                        <li><a class="nav-link" href="#contact">Contact</a></li>
+                        <li class="menu-item"><a class="nav-link" href="#home">Work</a></li>
+                        <li class="menu-item"><a class="nav-link" href="#about">About</a></li>
+                        <li class="menu-item"><a class="nav-link" href="#contact">Contact</a></li>
                     </ul>
                 </div>
             </nav>
+            <div class="hero">
+                <div class="hero-text-div">
+                    <h1 class="hero-text">Web</h1>
+                    <h1 class="hero-text">Developer</h1>
+                </div>
+                <p>Specialized in Web Development, UX/UI, Framer, and Front End Development.</p>
+            </div>
         </section>
-        <!-- ? About Page -->
+        <!-- About Page -->
         <section class="About-Page">
             <h1>About Me</h1>
         </section>
-        <!-- ? Work Page -->
+        <!-- Work Page -->
         <section class="Work">
             <h1>Work</h1>
         </section>
-        <!-- ? Contact me -->
+        <!-- Contact Page -->
         <section class="Contact-me">
-            <h1>Contact me</h1>
+            <h1>Contact Me</h1>
         </section>
     </main>
-
 </body>
 
 </html>
