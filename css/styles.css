@@ -685,6 +685,14 @@ section {
         display: block;
         cursor: pointer;
     }
+
+    .am {
+        font-size: 7rem;
+    }
+
+    .wai{
+        font-size: 2rem;
+    }
 }
 
 @media (max-width: 950px) {
@@ -700,6 +708,23 @@ section {
 
     .hero {
         gap: 20px;
+    }
+}
+
+@media (max-width: 390px){
+    .am {
+        font-size: 6rem;
+    }
+}
+
+@media (max-width: 375px){
+    .am {
+        font-size: 5rem;
+        margin-top: 20px;
+    }
+
+    .wai{
+        font-size: 2rem;
     }
 }
 
