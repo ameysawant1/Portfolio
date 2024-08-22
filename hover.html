@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,14 +22,104 @@
             height: 30px;
             background-color: #3498db;
             border-radius: 50%;
-            pointer-events: none; /* This ensures the mouse events pass through the follower */
+            pointer-events: none;
+            /* This ensures the mouse events pass through the follower */
             transition: transform 0.1s ease;
+        }
+
+        .random-img {
+            position: absolute;
+            width: 550px;
+            transition: transform 0.5s ease;
+        }
+
+        .project-section {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .project-card {
+            position: relative;
+            width: 300px;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+        }
+
+        .project-card img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        .project-card:hover img {
+            transform: scale(1.1);
+        }
+
+        .project-info {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.6);
+            color: #fff;
+            padding: 20px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .project-card:hover .project-info {
+            opacity: 1;
         }
     </style>
 </head>
+
 <body>
-    <div class="follower"></div>
+
+    <body>
+        <!-- Other content -->
+
+        <!-- Random Images -->
+        <img src="assets/bg-img/elements/element1.png" id="img1" class="random-img" alt="Random Image 1">
+        <img src="assets/bg-img/elements/element3.png" id="img2" class="random-img" alt="Random Image 2">
+        <img src="assets/bg-img/elements/element2.png" id="img3" class="random-img" alt="Random Image 3">
+        <img src="assets/bg-img/elements/element4.png" id="img4" class="random-img" alt="Random Image 4">
+        <img src="assets/bg-img/elements/element5.png" id="img5" class="random-img" alt="Random Image 5">
+
+        <!-- Other content -->
+
+        <div class="project-section">
+            <div class="project-card">
+                <img src="project1.jpg" alt="Project 1">
+                <div class="project-info">
+                    <h3>Project Title 1</h3>
+                    <p>Short description of the project.</p>
+                </div>
+            </div>
+            <div class="project-card">
+                <img src="project2.jpg" alt="Project 2">
+                <div class="project-info">
+                    <h3>Project Title 2</h3>
+                    <p>Short description of the project.</p>
+                </div>
+            </div>
+            <!-- Add more project cards as needed -->
+        </div>
+
+        <div class="follower"></div>
+    </body>
+
     <script>
+
         const follower = document.querySelector('.follower');
         const followerHalfSize = 1;
 
@@ -38,4 +129,5 @@
         });
     </script>
 </body>
+
 </html>

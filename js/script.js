@@ -9,7 +9,21 @@ document.addEventListener('DOMContentLoaded', function () {
     const navLinks = document.querySelectorAll('.nav-link');
     const words = loadingWords.querySelectorAll('h2');
     let currentWord = 0;
+    
+    const images = document.querySelectorAll('.random-img');
+    const viewportWidth = window.innerWidth;
+    const viewportHeight = window.innerHeight;
 
+    images.forEach(img => {
+        const randomX = Math.random() * (viewportWidth - img.width);
+        const randomY = Math.random() * (viewportHeight - img.height);
+
+        img.style.left = `${randomX}px`;
+        img.style.top = `${randomY}px`;
+
+        // Optional: Apply a small animation or effect to the images
+        img.style.transform = `rotate(${Math.random() * 360}deg)`;
+    });
     function showNextWord() {
         if (currentWord > 0) {
             words[currentWord - 1].classList.remove('active');

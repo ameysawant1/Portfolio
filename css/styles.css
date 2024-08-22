@@ -14,6 +14,12 @@
     --blackColor: black;
 }
 
+.random-img {
+    position: absolute;
+    width: 550px;
+    transition: transform 0.5s ease;
+}
+
 html,
 body {
     scrollbar-width: none;
@@ -53,7 +59,7 @@ section {
     position: relative;
     width: 100%;
     height: 100vh;
-    backdrop-filter: blur(50px);
+    backdrop-filter: blur(2px);
 }
 
 .logo-cover {
@@ -385,68 +391,63 @@ section {
 /* About Me section */
 
 .About-Page {
-    padding-inline: 10%;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 0.5fr 1fr 1fr;
-    grid-auto-columns: 1fr;
-    gap: 20px;
-    grid-auto-flow: row;
+    position: relative;
+    height: 100vh;
+    flex-direction: column;
+    align-items: center;
+    padding: 10%;
 }
 
-.About-Page h1 {
-    grid-area: 1 / 1 / 2 / 2;
-}
+.am,.wai{
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 
-.About-Page img {
-    grid-area: 1 / 2 / 3 / 3;
-    width: 100%;
-    height: 80%;
 }
-
-.About-Page p {
-    grid-area: 2 / 1 / 3 / 2;
-}
-
-.see-work {
-    grid-area: 3 / 1 / 4 / 2;
-}
-
-.name-links {
-    text-align: right;
-    display: flexbox;
-    flex-direction: row;
-    flex-wrap: wrap;
-    grid-area: 3 / 2 / 4 / 3;
-}
-
-.About-Page {
-    text-align: left;
-}
-
 
 .About-Page p {
     font-size: 1.2rem;
-    text-align: left;
+    text-align: center;
     color: var(--blackColor);
-    font-weight: 600;
-    background-image: linear-gradient(20deg, #000000, rgb(129, 129, 129));
+    font-weight: 700;
+    background-image: linear-gradient(35deg, #000000, rgba(205, 205, 205, 0.486));
     color: transparent;
     background-clip: text;
 }
 
-.About-Page h1 {
-    color: var(--blackColor);
-    font-size: 5rem;
+.am {
+    width: fit-content;
+    height: fit-content;
+    font-size: 9rem;
+    position: relative;
     font-weight: 500;
     font-family: "Bebas Neue", sans-serif;
-    height: fit-content;
+    color: transparent;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
 }
 
-.mylinks {
-    display: flex;
-    justify-content: right;
-    gap: 20px;
+.wai {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: var(--blackColor);
+    font-size: 3.5rem ;
+    font-weight: 500;
+    font-family: "Bebas Neue", sans-serif;
+    align-items: center;
+}
+
+.mylinks{
+    margin-top: 5%;
+    width: 100%;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    gap:25px;
 }
 
 .Btn {
