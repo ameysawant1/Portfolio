@@ -553,58 +553,6 @@ section {
 }
 
 
-@media (max-width: 1200px) {
-    .About-Page {
-        padding-inline: 5%;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: auto;
-    }
-
-    .About-Page img {
-        grid-area: 1 / 2 / 3 / 3;
-    }
-
-    .about-text {
-        grid-area: 2 / 1 / 3 / 2;
-    }
-
-    .name {
-        grid-area: 3 / 1 / 4 / 2;
-    }
-
-    .About-Page p {
-        grid-area: 4 / 1 / 5 / 2;
-    }
-}
-
-@media (max-width: 768px) {
-    .About-Page {
-        padding-inline: 2%;
-        grid-template-columns: 1fr;
-        grid-template-rows: auto;
-    }
-
-    .About-Page img {
-        grid-area: 1 / 1 / 2 / 2;
-    }
-
-    .about-text {
-        grid-area: 2 / 1 / 3 / 2;
-    }
-
-    .name {
-        grid-area: 3 / 1 / 4 / 2;
-    }
-
-    .About-Page p {
-        grid-area: 4 / 1 / 5 / 2;
-    }
-
-    .see-work {
-        grid-area: 5 / 1 / 6 / 2;
-    }
-}
-
 @keyframes shake {
     0% {
         rotate: 0;
@@ -697,6 +645,14 @@ section {
     .logo-div {
         animation: logo-div-animation both 1s ease-in;
         -webkit-animation: logo-div-animation both 1s ease-in;
+    }
+
+    .am {
+        font-size: 7rem;
+    }
+
+    .wai{
+        font-size: 2rem;
     }
 }
 
