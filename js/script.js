@@ -1,5 +1,29 @@
 document.addEventListener('DOMContentLoaded', function () {
+    function cardShow() {
+        let showingImage;
+        document.querySelectorAll('.cnt').forEach(function (cnt) {
+            cnt.addEventListener("mousemove", function (dets) {
+                showingImage = dets.target;
+                document.querySelector("#cursor").children[dets.target.dataset.index].style.opacity = 1;
+                document.querySelector("#cursor").children[dets.target.dataset.index].style.transform = `translate(${dets.clientX}px, ${dets.clientY}px)`;
+                showingImage.style.filter = "grayscale(1)";
+                document.querySelector(".Work").style.backgroundColor =  "#" + dets.target.dataset.color;
+            });
+            cnt.addEventListener("mouseleave", function (dets) {
+                document.querySelector("#cursor").children[showingImage.dataset.index].style.opacity = 0;
+                showingImage.style.filter = "grayscale(0)";
+                document.querySelector(".Work").style.backgroundColor =  "#f2f2f2";
+            });
+        });
+    }
+    cardShow();
 
+    function locoInitialize() {
+        const scroll = new LocomotiveScroll({
+            el: document.querySelector('main'),
+            smooth: true
+        });
+    }
     const loadingScreen = document.querySelector('.loading-screen');
     const loadingWords = document.querySelector('.loading-words');
     const homePage = document.querySelector('main');
@@ -9,10 +33,11 @@ document.addEventListener('DOMContentLoaded', function () {
     const navLinks = document.querySelectorAll('.nav-link');
     const words = loadingWords.querySelectorAll('h2');
     let currentWord = 0;
-    
     const images = document.querySelectorAll('.random-img');
     const viewportWidth = window.innerWidth;
     const viewportHeight = window.innerHeight;
+
+    locoInitialize();
 
     images.forEach(img => {
         const randomX = Math.random() * (viewportWidth - img.width);
@@ -21,9 +46,9 @@ document.addEventListener('DOMContentLoaded', function () {
         img.style.left = `${randomX}px`;
         img.style.top = `${randomY}px`;
 
-        // Optional: Apply a small animation or effect to the images
         img.style.transform = `rotate(${Math.random() * 360}deg)`;
     });
+
     function showNextWord() {
         if (currentWord > 0) {
             words[currentWord - 1].classList.remove('active');
@@ -73,7 +98,6 @@ document.addEventListener('DOMContentLoaded', function () {
         homePage.style.transition = 'opacity 1s, transform 1s';
     }
 
-    // Start the loader animation
     initLoader();
 
     window.addEventListener('load', () => {
@@ -89,25 +113,23 @@ document.addEventListener('DOMContentLoaded', function () {
             }, 800);
         });
     });
+
+
+
 });
 
 
 function magneticMenuItems() {
-    // Add classes to menu items and their links
     document.querySelectorAll(".menu-item").forEach(item => item.classList.add("magnetic"));
     document.querySelectorAll(".menu-item a").forEach(link => link.classList.add("link"));
 
-    // Select all elements with the 'magnetic' class
     var elements = document.querySelectorAll(".magnetic");
-    var t = 25; // Range of the magnetic effect
+    var t = 25;
 
-    // Apply the magnetic effect only if the window width is greater than 540 pixels
     if (window.innerWidth > 540) {
         elements.forEach(element => {
-            // Add mousemove and mouseout event listeners to each magnetic element
             element.addEventListener("mousemove", handleMouseMove);
             element.addEventListener("mouseout", function (e) {
-                // Return the element to its original position on mouseout
                 gsap.to(e.currentTarget, {
                     duration: 1,
                     x: 0,
@@ -132,16 +154,12 @@ function magneticMenuItems() {
 }
 
 function magneticLogo() {
-    // Select the logo element
     var logo = document.querySelector(".logo-div");
-    var t = 30; // Range of the magnetic effect
+    var t = 30;
 
-    // Apply the magnetic effect only if the window width is greater than 540 pixels
     if (window.innerWidth > 540) {
-        // Add mousemove and mouseout event listeners to the logo
         logo.addEventListener("mousemove", handleMouseMove);
         logo.addEventListener("mouseout", function (e) {
-            // Return the logo to its original position on mouseout
             gsap.to(e.currentTarget, {
                 duration: 1,
                 x: 0,
@@ -163,11 +181,9 @@ function magneticLogo() {
     }
 }
 
-// Initialize the magnetic effect for the logo when the DOM is fully loaded
 document.addEventListener("DOMContentLoaded", magneticLogo);
 
 
-// Call the function after the DOM is ready
 document.addEventListener("DOMContentLoaded", function () {
     magneticMenuItems();
 });
@@ -180,4 +196,22 @@ grained('#grained', {
     grainDensity: 2.80,
     grainHeight: 2.1,
     grainWidth: 2.1
+});
+
+document.getElementById('contactForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    
+    // Get form values
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const message = document.getElementById('message').value;
+
+    // Simulate form submission
+    console.log('Form submitted:', { name, email, message });
+
+    // Show response message
+    document.getElementById('responseMessage').innerText = 'Thank you for your message! I will get back to you soon.';
+    
+    // Clear the form
+    this.reset();
 });

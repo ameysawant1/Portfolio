@@ -37,6 +37,7 @@
     <!-- Include grained.js -->
     <!-- <script src="https://cdn.jsdelivr.net/npm/grained@latest/grained.min.js"></script> -->
 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.min.css">
     <style>
         :root {
             --ClashDisplay-Bold: "./assets/fonts/ClashDisplay-Bold.ttf";
@@ -46,6 +47,35 @@
 </head>
 
 <body>
+    <div id="cursor">
+        <div>
+            <div class="crow">
+                <div class="ccircle"></div>
+                <div class="ccapsule"><h1>GitHub</h1></div>
+                <div id="elem">
+                    <img src="https://img.icons8.com/?size=100&id=20909&format=png&color=000000" alt="">
+                    <img src="https://img.icons8.com/?size=100&id=21278&format=png&color=000000" alt="">
+                    <img src="https://img.icons8.com/?size=100&id=108784&format=png&color=000000" alt="">
+                    <img src="https://img.icons8.com/?size=100&id=9OGIyU8hrxW5&format=png&color=000000" alt="">
+                    <img src="" alt="">
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="crow">
+
+                <div class="ccircle"></div>
+                <div class="ccapsule">GitHub</div>
+                <div id="elem">
+                    <img src="https://img.icons8.com/?size=100&id=20909&format=png&color=000000" alt="">
+                    <img src="https://img.icons8.com/?size=100&id=21278&format=png&color=000000" alt="">
+                    <img src="https://img.icons8.com/?size=100&id=108784&format=png&color=000000" alt="">
+                    <img src="https://img.icons8.com/?size=100&id=9OGIyU8hrxW5&format=png&color=000000" alt="">
+                    <img src="" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="no-scroll-overlay"></div>
     <div class="loading-container">
         <div class="loading-screen">
@@ -116,11 +146,16 @@
         </div>
     </div>
     <main id="grained">
-        <img src="assets/bg-img/elements/element1.png" id="img1" class="random-img" alt="Random Image 1">
-        <img src="assets/bg-img/elements/element3.png" id="img2" class="random-img" alt="Random Image 2">
-        <img src="assets/bg-img/elements/element2.png" id="img3" class="random-img" alt="Random Image 3">
-        <img src="assets/bg-img/elements/element4.png" id="img4" class="random-img" alt="Random Image 4">
-        <img src="assets/bg-img/elements/element5.png" id="img5" class="random-img" alt="Random Image 5">
+        <img data-scroll data-scroll-speed="-1.5" src="assets/bg-img/elements/element1.png" id="img1" class="random-img"
+            alt="Random Image 1">
+        <img data-scroll data-scroll-speed="-1.5" src="assets/bg-img/elements/element3.png" id="img2" class="random-img"
+            alt="Random Image 2">
+        <img data-scroll data-scroll-speed="-1.5" src="assets/bg-img/elements/element2.png" id="img3" class="random-img"
+            alt="Random Image 3">
+        <img data-scroll data-scroll-speed="-1.5" src="assets/bg-img/elements/element4.png" id="img4" class="random-img"
+            alt="Random Image 4">
+        <img data-scroll data-scroll-speed="-1.5" src="assets/bg-img/elements/element5.png" id="img5" class="random-img"
+            alt="Random Image 5">
         <!-- Home Page -->
         <section class="Home-Page">
             <!-- Navbar -->
@@ -190,24 +225,81 @@
                     <span class="lBG"></span>
                 </button>
             </div>
+            <div class="aboutmefooter"></div>
         </section>
+        <!-- <section class="myskills">
+        </section> -->
         <!-- Work Page -->
         <section class="Work">
-            <h1>MyProject</h1>
-            <!-- <div class="work-1 work-div"><img src="./assets/works/projects-img-1" alt="projects image 1"> <h1>Project Name</h1></div>
-            <div class="work-2 work-div"><img src="./assets/works/projects-img-2" alt="projects image 2"> <h1>Project Name</h1></div>
-            <div class="work-3 work-div"><img src="./assets/works/projects-img-3" alt="projects image 3"> <h1>Project Name</h1></div>
-            <div class="work-4 work-div"><img src="./assets/works/projects-img-4" alt="projects image 4"> <h1>Project Name</h1></div>
-            <div class="work-5 work-div"><img src="./assets/works/projects-img-5" alt="projects image 5"> <h1>Project Name</h1></div>
-            <div class="work-6 work-div"><img src="./assets/works/projects-img-6" alt="projects image 6"> <h1>Project Name</h1></div>
-            <div class="work-7 work-div"><img src="./assets/works/projects-img-7" alt="projects image 7"> <h1>Project Name</h1></div>
-            <div class="work-8 work-div"><img src="./assets/works/projects-img-8" alt="projects image 8"> <h1>Project Name</h1></div> -->
+            <div class="workrow">
+                <h1>My Works</h1>
+                <svg width="73" height="67" viewBox="0 0 73 67" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M69.5 1.00001L3.99987 65.5001" stroke="var(--blackColor)" />
+                    <path d="M4 11V66H59" stroke="var(--blackColor)" />
+                </svg>
+            </div>
+            <div id="images">
+                <div class="cnt cnt1">
+                    <img data-color="d7ddf2" data-index="0" data-scroll data-scroll-speed="-1"
+                        src="https://abhishekjha.me/quaive.6fc624fe.png" alt="img">
+                </div>
+                <div class="cnt cnt2">
+                    <img data-color="d7ddf2" data-index="1" data-scroll data-scroll-speed="-1"
+                        src="https://abhishekjha.me/quaive.6fc624fe.png" alt="img">
+                </div>
+                <div class="cnt cnt3">
+                    <img data-color="d7ddf2" data-index="1" data-scroll data-scroll-speed="-1"
+                        src="https://abhishekjha.me/quaive.6fc624fe.png" alt="img">
+                </div>
+                <div class="cnt cnt4">
+                    <img data-color="d7ddf2" data-index="1" data-scroll data-scroll-speed="-1"
+                        src="https://abhishekjha.me/quaive.6fc624fe.png" alt="img">
+                </div>
+                <div class="cnt cnt5">
+                    <img data-color="d7ddf2" data-index="1" data-scroll data-scroll-speed="-1"
+                        src="https://abhishekjha.me/quaive.6fc624fe.png" alt="img">
+                </div>
+            </div>
         </section>
         <!-- Contact Page -->
         <section class="Contact-me">
-            <h1>Contact Me</h1>
+            <div class="container">
+                <h1>Contact Me</h1>
+                <p>I’d love to hear from you! Please use the contact form below or reach out via email or social media.</p>
+        
+                <div class="contact-methods">
+                    <h2>Email</h2>
+                    <p>Email me at: <a href="mailto:amey123sawant@gmail.com">amey123sawant@gmail.com</a></p>
+        
+                    <h2>Social Media</h2>
+                    <p>Connect with me on:
+                        <a href="https://twitter.com/yourusername" target="_blank">Twitter</a> |
+                        <a href="https://linkedin.com/in/yourusername" target="_blank">LinkedIn</a> |
+                        <a href="https://facebook.com/yourusername" target="_blank">Facebook</a>
+                    </p>
+                </div>
+        
+                <div class="contact-form">
+                    <h2>Contact Form</h2>
+                    <form id="contactForm">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" required>
+        
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+        
+                        <label for="message">Message:</label>
+                        <textarea id="message" name="message" rows="4" required></textarea>
+        
+                        <button type="submit">Submit</button>
+                    </form>
+                    <p id="responseMessage" class="response-message"></p>
+                </div>
+            </div>
+        
         </section>
     </main>
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.min.js"></script>
 </body>
 
 </html>
