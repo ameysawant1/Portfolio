@@ -5,7 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- title -->
     <title>Portfolio • Amey Sawant</title>
+    <!-- icon -->
     <link rel="icon" href="assets/logo-img/LOGO.svg">
 
     <!-- Custom CSS -->
@@ -34,10 +36,11 @@
     <!-- GSAP Library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.2/gsap.min.js" defer></script>
 
-    <!-- Include grained.js -->
-    <!-- <script src="https://cdn.jsdelivr.net/npm/grained@latest/grained.min.js"></script> -->
-
+    <!-- Locomotive Scroll -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.min.js"></script>
+
+    <!-- fonts  -->
     <style>
         :root {
             --ClashDisplay-Bold: "./assets/fonts/ClashDisplay-Bold.ttf";
@@ -51,7 +54,9 @@
         <div>
             <div class="crow">
                 <div class="ccircle"></div>
-                <div class="ccapsule"><h1>GitHub</h1></div>
+                <div class="ccapsule">
+                    <h1>GitHub</h1>
+                </div>
                 <div id="elem">
                     <img src="https://img.icons8.com/?size=100&id=20909&format=png&color=000000" alt="">
                     <img src="https://img.icons8.com/?size=100&id=21278&format=png&color=000000" alt="">
@@ -63,7 +68,6 @@
         </div>
         <div>
             <div class="crow">
-
                 <div class="ccircle"></div>
                 <div class="ccapsule">GitHub</div>
                 <div id="elem">
@@ -85,35 +89,35 @@
             <div class="loading-words">
                 <h2 class="home-active home-active-first">Hello<div class="dot"></div>
                 </h2>
-                <h2 class="home-active">Bonjour<div class="dot"></div>
+                <h2 class="home-active">Wellcome<div class="dot"></div>
                 </h2>
                 <h2 class="home-active">स्वागत हे<div class="dot"></div>
                 </h2>
-                <h2 class="home-active">Ciao<div class="dot"></div>
+                <h2 class="home-active">नमस्ते<div class="dot"></div>
                 </h2>
-                <h2 class="home-active">Olá<div class="dot"></div>
+                <h2 class="home-active">नमस्कार<div class="dot"></div>
                 </h2>
-                <h2 class="home-active jap">おい<div class="dot"></div>
+                <h2 class="home-active jap">નમસ્તે<div class="dot"></div>
                 </h2>
-                <h2 class="home-active">Hallå<div class="dot"></div>
+                <h2 class="home-active">নমস্কাৰ <div class="dot"></div>
                 </h2>
-                <h2 class="home-active">Guten tag<div class="dot"></div>
+                <h2 class="home-active">नमः<div class="dot"></div>
                 </h2>
-                <h2 class="home-active-last">Hallo<div class="dot"></div>
+                <h2 class="home-active-last">ਸਤ ਸ੍ਰੀ ਅਕਾਲ<div class="dot"></div>
                 </h2>
-                <h2 class="active">Home<div class="dot"></div>
+                <h2 class="active">Hello<div class="dot"></div>
                 </h2>
-                <h2>Work<div class="dot"></div>
+                <h2>Wellcome<div class="dot"></div>
                 </h2>
-                <h2>TWICE<div class="dot"></div>
+                <h2>To<div class="dot"></div>
                 </h2>
-                <h2>The Damai<div class="dot"></div>
+                <h2>My<div class="dot"></div>
                 </h2>
-                <h2>FABRIC&trade;<div class="dot"></div>
+                <h2>Portfolio<div class="dot"></div>
                 </h2>
-                <h2>Aanstekelijk<div class="dot"></div>
+                <h2>Website<div class="dot"></div>
                 </h2>
-                <h2>Base Create<div class="dot"></div>
+                <h2>hear<div class="dot"></div>
                 </h2>
                 <h2>AVVR<div class="dot"></div>
                 </h2>
@@ -145,6 +149,22 @@
             </div>
         </div>
     </div>
+    <menu>
+        <div class="links">
+            <ul>
+                <li><a href="#wp">Work</a></li>
+                <li><a href="#ap">About</a></li>
+                <li><a href="#cm">Contact</a></li>
+            </ul>
+        </div>
+        <div class="close-icon">
+            <button class="close-icon-button">
+                <span class="X"></span>
+                <span class="Y"></span>
+                <div class="close">Close</div>
+            </button>
+        </div>
+    </menu>
     <main id="grained">
         <img data-scroll data-scroll-speed="-1.5" src="assets/bg-img/elements/element1.png" id="img1" class="random-img"
             alt="Random Image 1">
@@ -172,9 +192,9 @@
                         <div class="dot-menu"></div>Menu
                     </h3>
                     <ul class="nav-links">
-                        <li class="menu-item"><a class="nav-link" href="#home">Work</a></li>
-                        <li class="menu-item"><a class="nav-link" href="#about">About</a></li>
-                        <li class="menu-item"><a class="nav-link" href="#contact">Contact</a></li>
+                        <li class="menu-item"><a class="nav-link" href="#Work">Work</a></li>
+                        <li class="menu-item"><a class="nav-link" href="#ap">About</a></li>
+                        <li class="menu-item"><a class="nav-link" href="#cm">Contact</a></li>
                     </ul>
                 </div>
             </nav>
@@ -189,7 +209,8 @@
             </div>
         </section>
         <!-- About Page -->
-        <section class="About-Page">
+        <section id="ap" class="About-Page">
+            
             <h1 class="am">About Me <span class="wai">WHO AM I ?</span></h1>
             <p>
                 Hello! I’m Amey Prakash Sawant, a Web Developer based in Mumbai, Maharashtra. With a background in
@@ -225,12 +246,12 @@
                     <span class="lBG"></span>
                 </button>
             </div>
-            <div class="aboutmefooter"></div>
+            <!-- <div class="aboutmefooter"></div> -->
         </section>
         <!-- <section class="myskills">
         </section> -->
         <!-- Work Page -->
-        <section class="Work">
+        <section id="Work" class="Work">
             <div class="workrow">
                 <h1>My Works</h1>
                 <svg width="73" height="67" viewBox="0 0 73 67" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -262,15 +283,16 @@
             </div>
         </section>
         <!-- Contact Page -->
-        <section class="Contact-me">
+        <section id="cm" class="Contact-me">
             <div class="container">
                 <h1>Contact Me</h1>
-                <p>I’d love to hear from you! Please use the contact form below or reach out via email or social media.</p>
-        
+                <p>I’d love to hear from you! Please use the contact form below or reach out via email or social media.
+                </p>
+
                 <div class="contact-methods">
                     <h2>Email</h2>
                     <p>Email me at: <a href="mailto:amey123sawant@gmail.com">amey123sawant@gmail.com</a></p>
-        
+
                     <h2>Social Media</h2>
                     <p>Connect with me on:
                         <a href="https://twitter.com/yourusername" target="_blank">Twitter</a> |
@@ -278,28 +300,27 @@
                         <a href="https://facebook.com/yourusername" target="_blank">Facebook</a>
                     </p>
                 </div>
-        
+
                 <div class="contact-form">
                     <h2>Contact Form</h2>
                     <form id="contactForm">
                         <label for="name">Name:</label>
                         <input type="text" id="name" name="name" required>
-        
+
                         <label for="email">Email:</label>
                         <input type="email" id="email" name="email" required>
-        
+
                         <label for="message">Message:</label>
                         <textarea id="message" name="message" rows="4" required></textarea>
-        
+
                         <button type="submit">Submit</button>
                     </form>
                     <p id="responseMessage" class="response-message"></p>
                 </div>
             </div>
-        
+
         </section>
     </main>
-    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.min.js"></script>
 </body>
 
 </html>

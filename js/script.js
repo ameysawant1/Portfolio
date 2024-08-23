@@ -26,11 +26,11 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     const loadingScreen = document.querySelector('.loading-screen');
     const loadingWords = document.querySelector('.loading-words');
-    const homePage = document.querySelector('main');
+    const homePage = document.querySelector('section');
     const loadingContainer = document.querySelector('.loading-container');
     const roundedDivTop = document.querySelector('.rounded-div-wrap.top');
     const roundedDivBottom = document.querySelector('.rounded-div-wrap.bottom');
-    const navLinks = document.querySelectorAll('.nav-link');
+    // const navLinks = document.querySelectorAll('.nav-links');
     const words = loadingWords.querySelectorAll('h2');
     let currentWord = 0;
     const images = document.querySelectorAll('.random-img');
@@ -104,18 +104,23 @@ document.addEventListener('DOMContentLoaded', function () {
         setTimeout(pageTransitionOut, 100);
     });
 
-    navLinks.forEach(link => {
-        link.addEventListener('click', function (e) {
-            e.preventDefault();
-            pageTransitionOut();
-            setTimeout(() => {
-                window.location.href = this.href;
-            }, 800);
-        });
+    // navLinks.forEach(link => {
+    //     link.addEventListener('click', function (e) {
+    //         e.preventDefault();
+    //         pageTransitionOut();
+    //         setTimeout(() => {
+    //             window.location.href = this.href;
+    //         }, 800);
+    //     });
+    // });
+
+    document.querySelector('.menu-icon').addEventListener('click', () => {
+        document.querySelector('menu').classList.toggle("show");
     });
 
-
-
+    document.querySelector('.close-icon').addEventListener('click', () => {
+        document.querySelector('menu').classList.remove("show");
+    });
 });
 
 
@@ -183,35 +188,20 @@ function magneticLogo() {
 
 document.addEventListener("DOMContentLoaded", magneticLogo);
 
-
 document.addEventListener("DOMContentLoaded", function () {
     magneticMenuItems();
-});
-
-grained('#grained', {
-    animate: true,
-    patternWidth: 200,
-    patternHeight: 200,
-    grainOpacity: 0.05,
-    grainDensity: 2.80,
-    grainHeight: 2.1,
-    grainWidth: 2.1
 });
 
 document.getElementById('contactForm').addEventListener('submit', function(event) {
     event.preventDefault();
     
-    // Get form values
     const name = document.getElementById('name').value;
     const email = document.getElementById('email').value;
     const message = document.getElementById('message').value;
 
-    // Simulate form submission
     console.log('Form submitted:', { name, email, message });
 
-    // Show response message
     document.getElementById('responseMessage').innerText = 'Thank you for your message! I will get back to you soon.';
     
-    // Clear the form
     this.reset();
 });
