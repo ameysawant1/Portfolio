@@ -7,11 +7,13 @@ document.addEventListener('DOMContentLoaded', function () {
                 document.querySelector("#cursor").children[dets.target.dataset.index].style.opacity = 1;
                 document.querySelector("#cursor").children[dets.target.dataset.index].style.transform = `translate(${dets.clientX}px, ${dets.clientY}px)`;
                 showingImage.style.filter = "grayscale(1)";
+                document.querySelector(".aboutmefooter").style.backgroundColor =  "#" + dets.target.dataset.color;
                 document.querySelector(".Work").style.backgroundColor =  "#" + dets.target.dataset.color;
             });
             cnt.addEventListener("mouseleave", function (dets) {
                 document.querySelector("#cursor").children[showingImage.dataset.index].style.opacity = 0;
                 showingImage.style.filter = "grayscale(0)";
+                document.querySelector(".aboutmefooter").style.backgroundColor =  "#f2f2f2";
                 document.querySelector(".Work").style.backgroundColor =  "#f2f2f2";
             });
         });
