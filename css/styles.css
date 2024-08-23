@@ -12,9 +12,15 @@
 main {
     position: absolute;
     backdrop-filter: blur(5px);
+    overflow-x: hidden;
 }
 
+section{
+    position: relative;
+    height: 100vh;
+    width: 100%;
 
+}
 
 :root {
     --whiteColor: white;
@@ -118,6 +124,7 @@ menu {
 }
 
 .random-img {
+
     position: absolute;
     top: 50%;
     left: 50%;
@@ -1081,10 +1088,6 @@ button:hover {
     #cursor {
         display: none;
     }
-    
-    .random-img {
-        width: 20rem;
-    }
 }
 
 @media (max-width: 768px) {
@@ -1144,10 +1147,6 @@ button:hover {
     .hero {
         gap: 20px;
     }
-    .random-img {
-        width: 20rem;
-    }
-
 }
 
 @media (max-width: 390px) {
@@ -1215,7 +1214,7 @@ button:hover {
     }
 }
 
-/* @keyframes menu-icon-animation {
+@keyframes menu-icon-animation {
     0% {
         transform: translateX(200px);
         -webkit-transform: translateX(200px);
@@ -1231,8 +1230,8 @@ button:hover {
         -ms-transform: translateX(0px);
         -o-transform: translateX(0px);
     }
-} */
-/* 
+}
+
 @-webkit-keyframes slide-in-blurred-top {
     0% {
         -webkit-transform: translateY(-1000px) scaleY(2.5) scaleX(0.2);
@@ -1287,4 +1286,4 @@ button:hover {
         -ms-transform: translateY(0) scaleY(1) scaleX(1);
         -o-transform: translateY(0) scaleY(1) scaleX(1);
     }
-} */
+} 
