@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f6f1;
+            color: #000;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+
+        .container {
+            width: 400px;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        a {
+            color: #0057FF;
+            text-decoration: none;
+            font-size: 24px;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        p {
+            margin-bottom: 20px;
+            color: #555;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            border: none;
+            border-bottom: 2px solid #0057FF;
+            padding: 10px;
+            font-size: 16px;
+            outline: none;
+            transition: all 0.3s ease;
+            background-color: transparent;
+            resize: none;
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        textarea:focus {
+            border-color: #0036cc;
+        }
+
+        textarea {
+            height: 100px;
+        }
+
+        .submit-btn {
+            background-color: transparent;
+            border: 2px solid #0057FF;
+            color: #0057FF;
+            font-size: 18px;
+            padding: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-radius: 25px;
+        }
+
+        .submit-btn:hover {
+            background-color: #0057FF;
+            color: #fff;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            gap: 15px;
+        }
+
+        .social-icons a {
+            font-size: 20px;
+            color: #0057FF;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Contact Me</h1>
+        <a href="mailto:hello@dividesign.com">hello@dividesign.com</a>
+        <p>Feel free to contact me with any inquiries or questions!</p>
+        <form>
+            <input type="text" placeholder="Name" required>
+            <input type="email" placeholder="Email Address" required>
+            <textarea placeholder="Message" required></textarea>
+            <button type="submit" class="submit-btn">Submit</button>
+        </form>
+        <div class="social-icons">
+            <a href="#" target="_blank">f</a>
+            <a href="#" target="_blank">X</a>
+            <a href="#" target="_blank">in</a>
+            <a href="#" target="_blank">dr</a>
+        </div>
+    </div>
+</body>
+</html>

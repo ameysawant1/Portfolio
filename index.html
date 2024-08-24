@@ -25,6 +25,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Bungee+Tint&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
         rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Baskervville+SC&display=swap" rel="stylesheet">
 
     <!-- Aos Animations -->
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
@@ -40,11 +41,15 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.min.css">
     <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.min.js"></script>
 
+    <!-- Lottie Files -->
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
     <!-- fonts  -->
     <style>
         :root {
             --ClashDisplay-Bold: "./assets/fonts/ClashDisplay-Bold.ttf";
             --font: "./assets/fonts/font.otf"
+                --work-background-img: "./assets/bg-img/work-background/work-backgroun.svg"
         }
     </style>
 </head>
@@ -165,7 +170,14 @@
             </button>
         </div>
     </menu>
-    <main id="grained">
+    <div class="menu-btn">
+        <div class="icon-menu">
+            <div class="line line1"></div>
+            <div class="line line2"></div>
+        </div>
+        <!-- <img src="assets/lines.png" alt="menu"> -->
+    </div>
+    <main>
         <img data-scroll data-scroll-speed="-1.5" src="assets/bg-img/elements/element1.png" id="img1" class="random-img"
             alt="Random Image 1">
         <img data-scroll data-scroll-speed="-1.5" src="assets/bg-img/elements/element3.png" id="img2" class="random-img"
@@ -210,43 +222,49 @@
         </section>
         <!-- About Page -->
         <section id="ap" class="About-Page">
-
-            <h1 class="am">About Me <span class="wai">WHO AM I ?</span></h1>
-            <p>
-                Hello! I’m Amey Prakash Sawant, a Web Developer based in Mumbai, Maharashtra. With a background in
-                Computer Engineering, I specialize in HTML, CSS, JavaScript, Python, and Django.
-                <br>
-                My journey began with a Diploma in Computer Engineering. Over the years, I’ve worked on various projects
-                and developed a passion for web development and design, focusing on creating beautiful and responsive
-                websites.
-                <br>
-                I’m particularly skilled in front-end development. Outside of work, I enjoy designing websites and
-                exploring new technologies to enhance my skills.
-            </p>
-            <div class="mylinks">
-                <button class="Btn">
-                    <span class="svgContainer">
-                        <svg fill="white" viewBox="0 0 496 512" height="1.6em">
-                            <path
-                                d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z">
-                            </path>
-                        </svg>
-                    </span>
-                    <span class="gBG"></span>
-                </button>
-                <button class="Btn">
-                    <span class="svgContainer">
-                        <svg viewBox="0 0 448 512" height="1.6em" xmlns="http://www.w3.org/2000/svg" class="svgIcon"
-                            fill="white">
-                            <path
-                                d="M100.3 448H7.4V148.9h92.9zM53.8 108.1C24.1 108.1 0 83.5 0 53.8a53.8 53.8 0 0 1 107.6 0c0 29.7-24.1 54.3-53.8 54.3zM447.9 448h-92.7V302.4c0-34.7-.7-79.2-48.3-79.2-48.3 0-55.7 37.7-55.7 76.7V448h-92.8V148.9h89.1v40.8h1.3c12.4-23.5 42.7-48.3 87.9-48.3 94 0 111.3 61.9 111.3 142.3V448z">
-                            </path>
-                        </svg>
-                    </span>
-                    <span class="lBG"></span>
-                </button>
+            <div class="about-page-main">
+                <div class="about-container">
+                    <h1 class="about-text">ABOUT ME</h1>
+                    <div class="overlay-text">WHO AM I ?</div>
+                </div>
+                <p>
+                    Hello! I’m Amey Prakash Sawant, a Web Developer based in Mumbai, Maharashtra. With a background in
+                    Computer Engineering, I specialize in HTML, CSS, JavaScript, Python, and Django.
+                    <br>
+                    My journey began with a Diploma in Computer Engineering. Over the years, I’ve worked on various
+                    projects
+                    and developed a passion for web development and design, focusing on creating beautiful and
+                    responsive
+                    websites.
+                    <br>
+                    I’m particularly skilled in front-end development. Outside of work, I enjoy designing websites and
+                    exploring new technologies to enhance my skills.
+                </p>
+                <div class="mylinks">
+                    <button class="Btn">
+                        <span class="svgContainer">
+                            <svg fill="white" viewBox="0 0 496 512" height="1.6em">
+                                <path
+                                    d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z">
+                                </path>
+                            </svg>
+                        </span>
+                        <span class="gBG"></span>
+                    </button>
+                    <button class="Btn">
+                        <span class="svgContainer">
+                            <svg viewBox="0 0 448 512" height="1.6em" xmlns="http://www.w3.org/2000/svg" class="svgIcon"
+                                fill="white">
+                                <path
+                                    d="M100.3 448H7.4V148.9h92.9zM53.8 108.1C24.1 108.1 0 83.5 0 53.8a53.8 53.8 0 0 1 107.6 0c0 29.7-24.1 54.3-53.8 54.3zM447.9 448h-92.7V302.4c0-34.7-.7-79.2-48.3-79.2-48.3 0-55.7 37.7-55.7 76.7V448h-92.8V148.9h89.1v40.8h1.3c12.4-23.5 42.7-48.3 87.9-48.3 94 0 111.3 61.9 111.3 142.3V448z">
+                                </path>
+                            </svg>
+                        </span>
+                        <span class="lBG"></span>
+                    </button>
+                </div>
             </div>
-            <div class="aboutmefooter"></div>
+            <!-- <div class="aboutmefooter"></div> -->
         </section>
         <!-- <section class="myskills">
         </section> -->
@@ -261,22 +279,77 @@
             </div>
             <div id="images">
                 <div class="cnt cnt1">
+                    <div class="about-project">
+                        <div class="project-name">
+                            <h1>Name</h1>
+                        </div>
+                        <div class="arrow-circle">
+                            <lottie-player
+                                src="https://lottie.host/d6f79113-8bd7-467a-a42b-21806c9fa26a/Od2h96WwVy.json"
+                                background="##000000" speed="1" loop autoplay direction="1" resizeMode="cover"
+                                mode="normal"></lottie-player>
+                        </div>
+                    </div>
                     <img data-color="d7ddf2" data-index="0" data-scroll data-scroll-speed="-1"
                         src="https://abhishekjha.me/quaive.6fc624fe.png" alt="img">
                 </div>
                 <div class="cnt cnt2">
+                    <div class="about-project">
+                        <div class="project-name">
+                            <h1>Name</h1>
+                        </div>
+                        <div class="arrow-circle">
+                            <lottie-player
+                                src="https://lottie.host/d6f79113-8bd7-467a-a42b-21806c9fa26a/Od2h96WwVy.json"
+                                background="##000000" speed="1" loop autoplay direction="1" resizeMode="cover"
+                                mode="normal"></lottie-player>
+                        </div>
+                    </div>
                     <img data-color="d7ddf2" data-index="1" data-scroll data-scroll-speed="-1"
                         src="https://abhishekjha.me/quaive.6fc624fe.png" alt="img">
                 </div>
                 <div class="cnt cnt3">
+                    <div class="about-project">
+                        <div class="project-name">
+                            <h1>Name</h1>
+                        </div>
+                        <div class="arrow-circle">
+                            <lottie-player
+                                src="https://lottie.host/d6f79113-8bd7-467a-a42b-21806c9fa26a/Od2h96WwVy.json"
+                                background="##000000" speed="1" loop autoplay direction="1" resizeMode="cover"
+                                mode="normal"></lottie-player>
+                        </div>
+                    </div>
                     <img data-color="d7ddf2" data-index="1" data-scroll data-scroll-speed="-1"
                         src="https://abhishekjha.me/quaive.6fc624fe.png" alt="img">
                 </div>
                 <div class="cnt cnt4">
+                    <div class="about-project">
+                        <div class="project-name">
+                            <h1>Name</h1>
+                        </div>
+                        <div class="arrow-circle">
+                            <lottie-player
+                                src="https://lottie.host/d6f79113-8bd7-467a-a42b-21806c9fa26a/Od2h96WwVy.json"
+                                background="##000000" speed="1" loop autoplay direction="1" resizeMode="cover"
+                                mode="normal"></lottie-player>
+                        </div>
+                    </div>
                     <img data-color="d7ddf2" data-index="1" data-scroll data-scroll-speed="-1"
                         src="https://abhishekjha.me/quaive.6fc624fe.png" alt="img">
                 </div>
                 <div class="cnt cnt5">
+                    <div class="about-project">
+                        <div class="project-name">
+                            <h1>Name</h1>
+                        </div>
+                        <div class="arrow-circle">
+                            <lottie-player
+                                src="https://lottie.host/d6f79113-8bd7-467a-a42b-21806c9fa26a/Od2h96WwVy.json"
+                                background="##000000" speed="1" loop autoplay direction="1" resizeMode="cover"
+                                mode="normal"></lottie-player>
+                        </div>
+                    </div>
                     <img data-color="d7ddf2" data-index="1" data-scroll data-scroll-speed="-1"
                         src="https://abhishekjha.me/quaive.6fc624fe.png" alt="img">
                 </div>
@@ -284,42 +357,37 @@
         </section>
         <!-- Contact Page -->
         <section id="cm" class="Contact-me">
-            <div class="aboutmefooter"></div>
-            <div class="container">
-                <h1>Contact Me</h1>
-                <p>I’d love to hear from you! Please use the contact form below or reach out via email or social media.
-                </p>
-
-                <div class="contact-methods">
-                    <h2>Email</h2>
-                    <p>Email me at: <a href="mailto:amey123sawant@gmail.com">amey123sawant@gmail.com</a></p>
-
-                    <h2>Social Media</h2>
-                    <p>Connect with me on:
-                        <a href="https://twitter.com/yourusername" target="_blank">Twitter</a> |
-                        <a href="https://linkedin.com/in/yourusername" target="_blank">LinkedIn</a> |
-                        <a href="https://facebook.com/yourusername" target="_blank">Facebook</a>
-                    </p>
-                </div>
-
-                <div class="contact-form">
-                    <h2>Contact Form</h2>
-                    <form id="contactForm">
-                        <label for="name">Name:</label>
-                        <input type="text" id="name" name="name" required>
-
-                        <label for="email">Email:</label>
-                        <input type="email" id="email" name="email" required>
-
-                        <label for="message">Message:</label>
-                        <textarea id="message" name="message" rows="4" required></textarea>
-
-                        <button type="submit">Submit</button>
-                    </form>
-                    <p id="responseMessage" class="response-message"></p>
+            <div class="contact-title">
+                <h1 class="contact-heading">LETS'S GET IN TOUCH</h1>
+            </div>
+            <div class="contact-form">
+                <form action="https://formspree.io/f/mblrpvlk" method="POST">
+                    <div class="fname">
+                        <input type="text" name="name" placeholder="FULL NAME" required>
+                    </div>
+                    <div class="email-phone">
+                        <input type="email" name="email" placeholder="EMAIL" required>
+                        <input type="text" name="phone" placeholder="PHONE" required>
+                    </div>
+                    <textarea name="message" placeholder="Message" required></textarea>
+                    <button type="submit" class="submit-btn">SUBMIT</button>
+                </form>
+                <div class="my-contacts">
+                    <div class="my-social-links">
+                        <h1>MY LINKS</h1>
+                        <a href="#" target="_blank">GITHUB</a>
+                        <a href="#" target="_blank">LINKEDIN</a>
+                        <a href="#" target="_blank">TWITTER</a>
+                        <a href="#" target="_blank">FACEBOOK</a>
+                    </div>
+                    <div class="my-details">
+                        <h1>MY CONTACT</h1>
+                        <a href="mailto:amey123sawant@gmail.com">amey123sawant@gmail.com</a>
+                        <a class="mm" href="#">MUMBAI-MAHARASHTRA</a>
+                        <a class="mm" href="#">+91 9082589648</a>
+                    </div>
                 </div>
             </div>
-
         </section>
     </main>
 </body>

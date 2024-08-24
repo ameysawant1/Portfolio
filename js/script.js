@@ -1,4 +1,25 @@
 document.addEventListener('DOMContentLoaded', function () {
+
+    // Initialize Locomotive Scroll
+    function locoInitialize() {
+        const scroll = new LocomotiveScroll({
+            el: document.querySelector('main'),
+            smooth: true
+        });
+
+        // Show or hide the menu button on scroll
+        scroll.on('scroll', (event) => {
+            let scrollButton = document.querySelector('.menu-btn');
+            if (event.scroll.y > 100) {
+                scrollButton.style.display = "block";
+            } else {
+                scrollButton.style.display = "none";
+            }
+        });
+    }
+
+    locoInitialize();
+
     function cardShow() {
         let showingImage;
         document.querySelectorAll('.cnt').forEach(function (cnt) {
@@ -7,39 +28,28 @@ document.addEventListener('DOMContentLoaded', function () {
                 document.querySelector("#cursor").children[dets.target.dataset.index].style.opacity = 1;
                 document.querySelector("#cursor").children[dets.target.dataset.index].style.transform = `translate(${dets.clientX}px, ${dets.clientY}px)`;
                 showingImage.style.filter = "grayscale(1)";
-                document.querySelector(".aboutmefooter").style.backgroundColor =  "#" + dets.target.dataset.color;
                 document.querySelector(".Work").style.backgroundColor =  "#" + dets.target.dataset.color;
             });
             cnt.addEventListener("mouseleave", function (dets) {
                 document.querySelector("#cursor").children[showingImage.dataset.index].style.opacity = 0;
                 showingImage.style.filter = "grayscale(0)";
-                document.querySelector(".aboutmefooter").style.backgroundColor =  "#f2f2f2";
                 document.querySelector(".Work").style.backgroundColor =  "#f2f2f2";
             });
         });
     }
     cardShow();
 
-    function locoInitialize() {
-        const scroll = new LocomotiveScroll({
-            el: document.querySelector('main'),
-            smooth: true
-        });
-    }
     const loadingScreen = document.querySelector('.loading-screen');
     const loadingWords = document.querySelector('.loading-words');
     const homePage = document.querySelector('section');
     const loadingContainer = document.querySelector('.loading-container');
     const roundedDivTop = document.querySelector('.rounded-div-wrap.top');
     const roundedDivBottom = document.querySelector('.rounded-div-wrap.bottom');
-    // const navLinks = document.querySelectorAll('.nav-links');
     const words = loadingWords.querySelectorAll('h2');
     let currentWord = 0;
     const images = document.querySelectorAll('.random-img');
     const viewportWidth = window.innerWidth;
     const viewportHeight = window.innerHeight;
-
-    locoInitialize();
 
     images.forEach(img => {
         const randomX = Math.random() * (viewportWidth - img.width);
@@ -106,25 +116,78 @@ document.addEventListener('DOMContentLoaded', function () {
         setTimeout(pageTransitionOut, 100);
     });
 
-    // navLinks.forEach(link => {
-    //     link.addEventListener('click', function (e) {
-    //         e.preventDefault();
-    //         pageTransitionOut();
-    //         setTimeout(() => {
-    //             window.location.href = this.href;
-    //         }, 800);
-    //     });
-    // });
-
     document.querySelector('.menu-icon').addEventListener('click', () => {
-        document.querySelector('menu').classList.toggle("show");
+        document.querySelector('menu').classList.add("show");
+        animateIconOpen('.menu-icon');
     });
 
     document.querySelector('.close-icon').addEventListener('click', () => {
         document.querySelector('menu').classList.remove("show");
+        animateIconClose('.close-icon');
+    });
+
+    document.querySelector('.menu-btn').addEventListener('click', () => {
+        document.querySelector('menu').classList.toggle("show");
+    });
+    
+    const form = document.querySelector('.contact-form form');
+    const submitBtn = document.querySelector('.contact-form .submit-btn');
+    const responseMessage = document.createElement('div');
+    responseMessage.classList.add('response-message');
+    form.appendChild(responseMessage);
+
+    form.addEventListener('submit', async function (event) {
+        event.preventDefault();
+
+        const formData = new FormData(form);
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Submitting...';
+
+        try {
+            const response = await fetch('https://formspree.io/f/mblrpvlk', {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
+
+            if (response.ok) {
+                responseMessage.textContent = 'Thank you for your message! I will get back to you soon.';
+                responseMessage.style.color = 'green';
+                form.reset();
+            } else {
+                throw new Error('Something went wrong');
+            }
+        } catch (error) {
+            responseMessage.textContent = 'There was a problem with your submission. Please try again.';
+            responseMessage.style.color = 'red';
+        } finally {
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'SUBMIT';
+        }
     });
 });
 
+// Animation for opening the menu icon
+function animateIconOpen(selector) {
+    gsap.to(selector, {
+        duration: 0.5,
+        rotation: 45,
+        scale: 1.2,
+        ease: "power2.out"
+    });
+}
+
+// Animation for closing the menu icon
+function animateIconClose(selector) {
+    gsap.to(selector, {
+        duration: 0.5,
+        rotation: 0,
+        scale: 1,
+        ease: "power2.in"
+    });
+}
 
 function magneticMenuItems() {
     document.querySelectorAll(".menu-item").forEach(item => item.classList.add("magnetic"));
